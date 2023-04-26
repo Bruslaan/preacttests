@@ -1,0 +1,46 @@
+{
+  "name": "preact-minimal",
+  "version": "2.0.0",
+  "description": "Preact minimal structure",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aganglada/preact-minimal.git"
+  },
+  "author": "Alejandro Garcia Anglada <aganglada@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "css-minimizer-webpack-plugin": "1",
+    "preact": "^10.13.2",
+    "preact-router": "^2.6.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "3",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "mini-css-extract-plugin": "1",
+    "npm-run-all": "^4.1.5",
+    "offline-plugin": "^5.0.7",
+    "style-loader": "1",
+    "svg-inline-loader": "^0.8.0",
+    "terser-webpack-plugin": "1",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1",
+    "webpack-merge": "^4.2.2"
+  },
+  "scripts": {
+    "copy:public": "cp -r public/ build/",
+    "webpack:dev": "webpack-dev-server --config ./config/webpack.config.dev.babel.js --env=developement",
+    "webpack:prod": "NODE_ENV=production webpack --config ./config/webpack.config.prod.babel.js --env=production",
+    "dev": "run-s copy:public webpack:dev",
+    "prod": "run-s copy:public webpack:prod",
+    "start": "http-server build/"
+  }
+}
